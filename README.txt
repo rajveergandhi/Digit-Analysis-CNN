@@ -1,3 +1,20 @@
+The training set consists of 26344 3x64x64 8bit-RGB images. There is a unique label for each of the examples, between 0 and 39 inclusively.
+
+The test set consists of 6600 images of the same format.
+
+Here's how to load (and view) this data in numpy:
+
+import numpy
+trainX = numpy.load('tinyX.npy') # this should have shape (26344, 3, 64, 64)
+trainY = numpy.load('tinyY.npy') 
+testX = numpy.load('tinyX_test.npy') # (6600, 3, 64, 64)
+
+# to visualize only
+import scipy.misc
+scipy.misc.imshow(trainX[0].transpose(2,1,0)) # put RGB channels last
+
+-----------------------------------------
+
 feedforward.py
 	- Our own implementation of the feef-forward neural network.
 cnn-complete-pictures.py
